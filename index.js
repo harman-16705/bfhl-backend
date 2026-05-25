@@ -10,7 +10,11 @@ const EMAIL = "hariompatidar231194@acropolis.in";
 const ROLL_NUMBER = "0827CS231097";
 
 // ── Middleware ──────────────────────────────────────────────────────────────
-app.use(cors()); // Allow all origins
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
+}))
 app.use(express.json());
 
 // ── Helper: check if a number is prime ─────────────────────────────────────
